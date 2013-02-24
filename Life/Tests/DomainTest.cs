@@ -11,6 +11,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
     public class DomainTest {
+        public DomainTest() {
+            Create = new Father();
+        }
+
         public class AssertThat {
             public static void AreEqual(string expectedGameRepresentation, Game game) {
                 var row = 0;
@@ -53,5 +57,7 @@ namespace Tests {
                 return sb.ToString();
             }
         }
+
+        public Father Create { get; private set; }
     }
 }

@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DomainTest.cs" />
+    <Compile Include="Father.cs" />
     <Compile Include="WhenMakeStep.cs" />
     <Compile Include="WhenStartGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

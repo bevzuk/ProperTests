@@ -21,18 +21,15 @@ namespace Tests {
             AssertThat.AreEqual(@"...
                                   ...
                                   ...", game);
-            Assert.IsFalse(game[1, 1].IsAlive);
-            Assert.IsFalse(game[1, 2].IsAlive);
-            Assert.IsFalse(game[1, 3].IsAlive);
         }
 
         [TestMethod]
         public void CanSetAliveCells() {
             var game = new Game(2);
-            game.GiveBirth(1, 1);
-            game.GiveBirth(1, 2);
+            game.GiveBirth(0, 0);
+            game.GiveBirth(0, 1);
             AssertThat.AreEqual(@"xx
-                                  x.", game);
+                                  ..", game);
         }
     }
 }
