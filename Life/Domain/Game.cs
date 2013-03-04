@@ -1,12 +1,13 @@
 ﻿#region Usings
 
+using System;
 using System.Text;
 
 #endregion
 
 namespace Domain {
     public class Game {
-        private bool[,] cells;
+        public bool[,] cells;
         public int Size { get; private set; }
 
         public Game(int size) {
@@ -54,7 +55,7 @@ namespace Domain {
                 }
                 sb.AppendLine();
             }
-            return sb.ToString();
+            return sb.ToString().TrimEnd(Environment.NewLine.ToCharArray());
         }
 
         private int NumberOfNeighbors(int row, int column) {

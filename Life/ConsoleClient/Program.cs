@@ -8,7 +8,7 @@ using Domain;
 namespace ConsoleClient {
     internal class Program {
         private static void Main(string[] args) {
-            var game = InfinteGrowth();
+            var game = GosperGliderGun();
             while (true) {
                 Console.Clear();
                 Console.Write(game.ToString());
@@ -18,10 +18,6 @@ namespace ConsoleClient {
         }
 
         private static Game Glider() {
-            // .x.
-            // ..x
-            // xxx
-
             return @"
 .x........
 ..x.......

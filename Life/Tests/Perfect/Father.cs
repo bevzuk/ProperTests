@@ -1,8 +1,6 @@
-﻿using System;
-using System.Linq;
-using Domain;
+﻿using Domain;
 
-namespace Tests {
+namespace Tests.Perfect {
     public class Father {
         public Game Game(string gameRepresentation) {
             return gameRepresentation.AsGame();

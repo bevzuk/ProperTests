@@ -1,7 +1,8 @@
-﻿#region
+﻿#region Usings
 
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tests.Perfect;
 
 #endregion
 

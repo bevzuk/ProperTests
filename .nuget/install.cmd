@@ -1,0 +1,1 @@
+NuGet.exe install NUnit -Source C:\Projects\ProperTests\Life\packages\NUnit.2.6.2\ -OutputDirectory C:\Projects\ProperTests\Life\packages\

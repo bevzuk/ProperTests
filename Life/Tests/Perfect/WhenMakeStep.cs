@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #endregion
 
-namespace Tests {
+namespace Tests.Perfect {
     [TestClass]
     public class WhenMakeStep : DomainTest {
         [TestMethod]
@@ -46,7 +46,7 @@ namespace Tests {
         } 
 
         [TestMethod]
-        public void AnyLiveCellWithThreeNeighborsLives() {
+        public void AnyLiveCellWithThreeNeighborsLives2() {
             var game = new Game(3);
             game.GiveBirth(0, 0);
             game.GiveBirth(0, 1);
@@ -70,10 +70,10 @@ namespace Tests {
         }
 
         [TestMethod]
-        public void AnyDeadCellWithExactlyThreeNeighboursBecomesALiveCellByReproduction() {
-            var game = Create.Game(@"x..
+        public void AnyLiveCellWithThreeNeighborsLives() {
+            var game = Create.Game(@"x.x
                                      ...
-                                     x.x");
+                                     x..");
 
             game.Step();
 
