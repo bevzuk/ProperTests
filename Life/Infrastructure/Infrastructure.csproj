@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameRepository.cs" />
+    <Compile Include="IDatabase.cs" />
     <Compile Include="LifeRepository.cs" />
   </ItemGroup>
   <ItemGroup>

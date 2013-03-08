@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using Application;
+using Infrastructure;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Linq;

@@ -8,7 +8,7 @@ using System.Linq;
 namespace Domain {
     public static class StringExtensions {
         public static Game AsGame(this string gameRepresentation) {
-            var lines = gameRepresentation.Split(new[] {Environment.NewLine}, StringSplitOptions.None).ToList().ConvertAll(_ => _.Trim().ToCharArray());
+            var lines = gameRepresentation.Split(new[] {Environment.NewLine, "\n"}, StringSplitOptions.RemoveEmptyEntries).ToList().ConvertAll(_ => _.Trim().ToCharArray());
             var game = new Game(lines.Count);
             for (var row = 0; row < lines.Count; row++) {
                 var line = lines[row];

@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-namespace Application {
+namespace Infrastructure {
     public interface IDatabase {
         ISession OpenSession();
         void Close(ISession session);

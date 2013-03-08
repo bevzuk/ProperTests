@@ -36,12 +36,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameService.cs" />
-    <Compile Include="IDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{8FB9D404-FE6A-4811-9550-6CD3726F4119}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{C87DF3E0-D09B-4BF1-8B98-01252A2F8B23}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

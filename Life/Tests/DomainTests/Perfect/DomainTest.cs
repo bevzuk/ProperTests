@@ -18,8 +18,8 @@ namespace DomainTests.Perfect {
         public class AssertThat {
             public static void AreEqual(string expectedGameRepresentation, Game game) {
                 var row = 0;
-                var lines = expectedGameRepresentation.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).ToList().ConvertAll(_ => _.Trim());
-                var errors = expectedGameRepresentation.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).ToList().ConvertAll(_ => _.Trim().ToCharArray());
+                var lines = expectedGameRepresentation.Split(new[] {Environment.NewLine, "\n"}, StringSplitOptions.RemoveEmptyEntries).ToList().ConvertAll(_ => _.Trim());
+                var errors = expectedGameRepresentation.Split(new[] {Environment.NewLine, "\n"}, StringSplitOptions.RemoveEmptyEntries).ToList().ConvertAll(_ => _.Trim().ToCharArray());
                 var hasErrors = false;
 
                 foreach (var line in lines) {
