@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #endregion
 
-namespace Tests.NotPerfect {
+namespace DomainTests.NotPerfect {
     [TestClass]
     public class GameTests {
         [TestMethod]
