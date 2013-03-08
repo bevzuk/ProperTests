@@ -1,12 +1,11 @@
 ﻿#region Usings
 
-using Domain;
+using DomainTests.Perfect;
 using NUnit.Framework;
-using Tests.Perfect;
 
 #endregion
 
-namespace Tests {
+namespace DomainTests {
     [TestFixture]
     public class WhenEvolute : DomainTest {
         [Test]
@@ -19,6 +18,19 @@ namespace Tests {
 
             Assert.That(game, Equivalent.To(@"...
                                               ...
+                                              ..."));
+        }
+
+        [Test]
+        public void AnyDeadCellWithThreeNeighborsArises() {
+            var game = Create.Game(@"x.x
+                                     ...
+                                     x..");
+
+            game.Step();
+
+            Assert.That(game, Equivalent.To(@"...
+                                              .x.
                                               ..."));
         }
     }

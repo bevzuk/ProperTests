@@ -2,11 +2,10 @@
 
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests.Perfect;
 
 #endregion
 
-namespace Tests {
+namespace DomainTests.Perfect {
     [TestClass]
     public class WhenStartGame : DomainTest {
         [TestMethod]

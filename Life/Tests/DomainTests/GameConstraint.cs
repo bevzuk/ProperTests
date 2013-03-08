@@ -7,7 +7,7 @@ using NUnit.Framework.Constraints;
 
 #endregion
 
-namespace Tests {
+namespace DomainTests {
     public class GameConstraint : Constraint {
         private readonly string expectedGameRepresentation;
         private string actualGameRepresentation;

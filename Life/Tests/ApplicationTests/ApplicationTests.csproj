@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DBF88E0E-E772-46FA-B988-5E5A1D466011}</ProjectGuid>
+    <ProjectGuid>{4621E752-F043-4B1F-9973-4867F5247C70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tests</RootNamespace>
-    <AssemblyName>Tests</AssemblyName>
+    <RootNamespace>ApplicationTests</RootNamespace>
+    <AssemblyName>ApplicationTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\DomainTests\bin\Debug\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -53,24 +53,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Equivalent.cs" />
-    <Compile Include="GameConstraint.cs" />
-    <Compile Include="NotPerfect\TestClass1.cs" />
-    <Compile Include="Perfect\DomainTest.cs" />
-    <Compile Include="Perfect\Father.cs" />
-    <Compile Include="NotPerfect\GovnotestAttribute.cs" />
-    <Compile Include="WhenEvolute.cs" />
-    <Compile Include="Perfect\WhenMakeStep.cs" />
-    <Compile Include="Perfect\WhenStartGame.cs" />
+    <Compile Include="ApplicationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WhenLoadGame.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{8FB9D404-FE6A-4811-9550-6CD3726F4119}</Project>
-      <Name>Domain</Name>
+    <ProjectReference Include="..\..\Application\Application.csproj">
+      <Project>{F5A2C2A1-F3D9-472F-84E7-7C1080607E09}</Project>
+      <Name>Application</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

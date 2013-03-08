@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #endregion
 
-namespace Tests.Perfect {
+namespace DomainTests.Perfect {
     public class DomainTest {
         public DomainTest() {
             Create = new Father();
