@@ -44,7 +44,7 @@ namespace DomainTests.NotPerfect {
 
             game.Step();
 
-            Assert.IsTrue(game.Cells[1, 1].IsAlive);
+            Assert.IsTrue(game.Cells[1, 1]);
         }
 
         [TestMethod]
@@ -52,10 +52,10 @@ namespace DomainTests.NotPerfect {
         public void Test4() {
             var game = new Game(2);
 
-            Assert.AreEqual(false, game.Cells[0, 0].IsAlive);
-            Assert.AreEqual(false, game.Cells[0, 1].IsAlive);
-            Assert.AreEqual(false, game.Cells[1, 0].IsAlive);
-            Assert.AreEqual(false, game.Cells[1, 0].IsAlive);
+            Assert.AreEqual(false, game.Cells[0, 0]);
+            Assert.AreEqual(false, game.Cells[0, 1]);
+            Assert.AreEqual(false, game.Cells[1, 0]);
+            Assert.AreEqual(false, game.Cells[1, 0]);
         }
     }
 }

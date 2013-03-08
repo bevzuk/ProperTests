@@ -7,46 +7,46 @@ using System.Text;
 
 namespace Domain {
     public class Game {
-        public Cell[,] Cells;
+        public bool[,] Cells;
         public int Size { get; private set; }
 
         public Game(int size) {
             Size = size;
-            Cells = new Cell[size,size];
+            Cells = new bool[size,size];
             for (var row = 0; row < Size; row++) {
                 for (var column = 0; column < Size; column++) {
-                    Cells[row, column] = new Cell(false);
+                    Cells[row, column] = false;
                 }
             }
         }
 
         public Cell this[int row, int column] {
-            get { return Cells[row, column]; }
+            get { return new Cell(Cells[row, column]); }
         }
 
         public void GiveBirth(int row, int column) {
-            Cells[row, column] = new Cell(true);
+            Cells[row, column] = true;
         }
 
         public void Step() {
-            var newGeneration = new Cell[Size,Size];
+            var newGeneration = new bool[Size,Size];
             for (var row = 0; row < Size; row++) {
                 for (var column = 0; column < Size; column++) {
-                    newGeneration[row, column] = new Cell(false);
+                    newGeneration[row, column] = false;
                     if (this[row, column].IsAlive && NumberOfNeighbors(row, column) < 2) {
-                        newGeneration[row, column] = new Cell(false);
+                        newGeneration[row, column] = false;
                     }
                     if (this[row, column].IsAlive && NumberOfNeighbors(row, column) == 2) {
-                        newGeneration[row, column] = new Cell(true);
+                        newGeneration[row, column] = true;
                     }
                     if (this[row, column].IsAlive && NumberOfNeighbors(row, column) == 3) {
-                        newGeneration[row, column] = new Cell(true);
+                        newGeneration[row, column] = true;
                     }
                     if (this[row, column].IsAlive && NumberOfNeighbors(row, column) == 4) {
-                        newGeneration[row, column] = new Cell(false);
+                        newGeneration[row, column] = false;
                     }
                     if (this[row, column].IsDead && NumberOfNeighbors(row, column) == 3) {
-                        newGeneration[row, column] = new Cell(true);
+                        newGeneration[row, column] = true;
                     }
                 }
             }
@@ -78,7 +78,7 @@ namespace Domain {
 
         private int Neighbor(int row, int column) {
             if (row < 0 || row >= Size || column < 0 || column >= Size) return 0;
-            return Cells[row, column].IsAlive ? 1 : 0;
+            return Cells[row, column] ? 1 : 0;
         }
     }
 }
