@@ -35,18 +35,7 @@ namespace DomainTests.Perfect {
 
         [TestMethod]
         public void AnyLiveCellWithThreeNeighborsLives() {
-            var game = new Game(3);
-            game.GiveBirth(0, 0);
-            game.GiveBirth(0, 2);
             game.GiveBirth(2, 0);
-            game.GiveBirth(1, 1);
-
-            game.Step();
-
-            Assert.IsTrue(game[1, 1].IsAlive);
-        } 
-
-        [TestMethod]
         public void AnyLiveCellWithFourNeighborsDiesByOvercrowding() {
             var game = Create.Game(@"x.x
                                      .x.
