@@ -1,12 +1,13 @@
-﻿using Application;
+﻿#region Usings
+
 using NUnit.Framework;
+
+#endregion
 
 namespace ApplicationTests {
     [TestFixture]
     public class WhenLoadGame : ApplicationTest {
         [Test]
-        public void CanSaveGame() {
-            var gameService = new GameService();
-        }
+        public void SaveGameState() {}
     }
 }
