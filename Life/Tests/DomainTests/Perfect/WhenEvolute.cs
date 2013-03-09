@@ -1,11 +1,10 @@
 ﻿#region Usings
 
-using DomainTests.Perfect;
 using NUnit.Framework;
 
 #endregion
 
-namespace DomainTests {
+namespace DomainTests.Perfect {
     [TestFixture]
     public class WhenEvolute : DomainTest {
         [Test]
