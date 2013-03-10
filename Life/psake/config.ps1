@@ -6,11 +6,10 @@ properties {
 	$solutionPath = '../'
 	$solutionFilename = $solutionPath + 'Life.sln'
 
-	$migrationsPath = $solutionPath + 'Tests/ApplicationTests'
-    $migrationsDllName = 'ApplicationTests'
-    $migratorPath = $solutionPath + 'packages/Migrator.1.1/tools'
-	
-    $migrator = (Get-Item "$migratorPath/Migrator.Console.exe")
+	$dbScriptsPath = $solutionPath + 'DB/Scripts/'
+	$migrator = $solutionPath + 'packages/dbmg.0.5.5.2/tools/dbmg.exe'
+	$connectionString = "Data Source=.;Initial Catalog=Life;Integrated Security=True;MultipleActiveResultSets=True"
+	$database = "mssql"
 }
 
 task default -depends DoNotRunItDirectly
@@ -23,7 +22,7 @@ task Build {
 	MSBuild -t:Build -p:Configuration=$configuration $solutionFilename
 }
 
-task Migrate {
-#	Invoke-Expression "$migrator --provider=sqlserver --connectionString=Main --target=$migrationsPath/$migrationsDllName.dll"
-	MSBuild -t:Migrate $migrationsPath/$migrationsDllName.proj
+task DB {
+	Echo "$migrator -c ""$connectionString"" -d ""$dbScriptsPath"" -p $database"
+	Invoke-Expression "$migrator -c ""$connectionString"" -d ""$dbScriptsPath"" -p $database"
 }
