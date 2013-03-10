@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="ApplicationTests.Perfect" assembly="ApplicationTests" default-access="field" default-lazy="false" default-cascade="all" auto-import="false">
+
+  <class name="Cell" table="Cell">
+    <id name="Id" column="Id">
+      <generator class="native" />
+    </id>
+
+    <property name="positionX" column="PositionX" />
+    <property name="positionY" column="PositionY" />
+  </class>
+
+</hibernate-mapping>

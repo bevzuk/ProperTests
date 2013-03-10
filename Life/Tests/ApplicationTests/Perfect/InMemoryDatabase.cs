@@ -24,6 +24,7 @@ namespace ApplicationTests.Perfect {
 
             session = configuration.BuildSessionFactory().OpenSession();
             new SchemaExport(configuration).Execute(false, true, false, session.Connection, null);
+            session.Save(new HardcodedData());
         }
 
         public ISession OpenSession() {
@@ -69,6 +70,10 @@ namespace ApplicationTests.Perfect {
 
         public object GetId(object entity) {
             return session.GetIdentifier(entity);
+        }
+
+        public HardcodedData HardcodedData {
+            get { return session.Load<HardcodedData>(1); }
         }
     }
 }

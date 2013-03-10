@@ -1,5 +1,6 @@
 ﻿#region usings
 
+using System.Collections.Generic;
 using Domain;
 using Infrastructure;
 
@@ -7,6 +8,8 @@ using Infrastructure;
 
 namespace Application {
     public class GameService {
-        public void Save(Game game, IDatabase database) {}
+        public List<Game> LoadGames(LifeRepository repository) {
+            return repository.LoadGames();
+        }
     }
 }
