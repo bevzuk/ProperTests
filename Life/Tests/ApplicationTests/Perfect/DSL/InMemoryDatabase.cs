@@ -12,17 +12,16 @@ using NHibernate.Tool.hbm2ddl;
 
 #endregion
 
-namespace ApplicationTests.Perfect {
+namespace ApplicationTests.Perfect.DSL {
     public class InMemoryDatabase : IDatabase {
         private readonly AutoResetEvent connectionAvailable = new AutoResetEvent(true);
         private readonly ISession session;
         private ITransaction transaction;
 
         public InMemoryDatabase() {
-            var configuration = new Configuration()
-                .Configure();
-
-            session = configuration.BuildSessionFactory().OpenSession();
+            var configuration = new Configuration().Configure();
+            var sessionFactory = configuration.BuildSessionFactory();
+            session = sessionFactory.OpenSession();
             new SchemaExport(configuration).Execute(false, true, false, session.Connection, null);
         }
 
