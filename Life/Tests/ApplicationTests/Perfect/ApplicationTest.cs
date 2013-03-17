@@ -23,8 +23,16 @@ namespace ApplicationTests.Perfect {
             InMemoryDatabase.EnsureNextTimeDataIsPulledFromDatabase();
         }
 
+// ReSharper disable InconsistentNaming
         internal ObjectFather a {
-            get { return new ObjectFather(); }
+// ReSharper restore InconsistentNaming
+            get { return new ObjectFather(Context); }
+        }
+
+// ReSharper disable InconsistentNaming
+        internal ObjectFather an {
+// ReSharper restore InconsistentNaming
+            get { return a; }
         }
     }
 }

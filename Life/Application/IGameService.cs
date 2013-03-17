@@ -8,6 +8,6 @@ using Infrastructure;
 namespace Application {
     public interface IGameService {
         void Save(Game game, IDatabase database);
-        Game Load(IDatabase database);
+        Game Load(string name, IDatabase database);
     }
 }

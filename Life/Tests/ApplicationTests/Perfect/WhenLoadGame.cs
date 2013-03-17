@@ -2,7 +2,6 @@
 
 using Application;
 using Common;
-using Domain;
 using NUnit.Framework;
 
 #endregion
@@ -14,11 +13,12 @@ namespace ApplicationTests.Perfect {
 
         [Test]
         public void SaveGameState() {
-            Given(a.Game(@"...
-                           .x.
-                           ..."));
+            Given(a.Game(name: "SampleGame",
+                         field: @"...
+                                  .x.
+                                  ..."));
 
-            var game = service.Load(InMemoryDatabase);
+            var game = service.Load("SampleGame", InMemoryDatabase);
 
             Assert.That(game, IsEquivalent.To(@"...
                                                 .x.

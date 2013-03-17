@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Infrastructure.DataObjects" assembly="Infrastructure">
+
+  <class name="Game">
+    <id type="int" column="Id">
+      <generator class="native" />
+    </id>
+    <property name="Name" unique="true" />
+    <property name="Size" />
+    <set name="Cells" table="Cells">
+      <key column="GameId" foreign-key="FK_Cell_Game" />
+      <composite-element class="Cell" >
+        <property name="X" column="PositionX" />
+        <property name="Y" column="PositionY" />
+      </composite-element>
+    </set>
+  </class>
+</hibernate-mapping>

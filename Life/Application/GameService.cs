@@ -7,9 +7,12 @@ using Infrastructure;
 
 namespace Application {
     public class GameService : IGameService {
-        public void Save(Game game, IDatabase database) {}
-        public Game Load(IDatabase database) {
-            return new Game(3);
+        public void Save(Game game, IDatabase database) {
+            new GameRepository(database).Save(game);
+        }
+
+        public Game Load(string name, IDatabase database) {
+            return new GameRepository(database).Load(name);
         }
     }
 }
