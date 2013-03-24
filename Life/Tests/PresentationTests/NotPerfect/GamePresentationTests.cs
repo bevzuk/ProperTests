@@ -24,10 +24,12 @@ namespace PresentationTests.NotPerfect {
         public void AssertFakeState() {
             var mock = new Mock<ILifeWebService>();
             var expected = new Game();
-            mock.Setup(_ => _.Load(It.IsAny<string>())).Returns(expected);
+            const string gameName = "New game";
+
+            mock.Setup(_ => _.Load(gameName)).Returns(expected);
 
             var viewModel = new MainViewModel(mock.Object);
-            viewModel.Load("New game");
+            viewModel.Load(gameName);
 
             Assert.AreSame(expected, viewModel.CurrentGame);
         }
