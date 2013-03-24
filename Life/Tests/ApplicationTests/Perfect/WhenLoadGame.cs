@@ -1,21 +1,21 @@
 ﻿#region Usings
 
-using System.Linq;
 using Application;
+using Domain;
 using NUnit.Framework;
 
 #endregion
 
 namespace ApplicationTests.Perfect {
     [TestFixture]
-    public class WhenSaveGame : ApplicationTest {
+    public class WhenLoadGame : ApplicationTest {
         [Test]
-        public void LoadGameWithState() {
-            var game = Create.Game(name: "Life game");
+        public void SaveGameState() {
+            var game = new Game(3);
 
-            var actualGames = new GameService().LoadGames(LifeRepository);
+            new GameService().Save(game, InMemoryDatabase);
 
-            Assert.AreEqual("Life game", actualGames.Single().Name);
+            Assert.Fail("А как написать ассерт?");
         }
     }
 }

@@ -7,11 +7,7 @@ using System.Text;
 
 namespace Domain {
     public class Game {
-        private Game() {}
-
         public bool[,] Cells;
-
-        public string Name { get; private set; }
         public int Size { get; private set; }
 
         public Game(int size) {
