@@ -1,7 +1,6 @@
 ﻿#region Usings
 
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -20,7 +19,7 @@ namespace ApplicationTests.Perfect.DSL {
         private ITransaction transaction;
 
         public InMemoryDatabase() {
-            var configuration = new Configuration().Configure();
+            var configuration = new Configuration().Configure("app.config");
             var sessionFactory = configuration.BuildSessionFactory();
             session = sessionFactory.OpenSession();
             new SchemaExport(configuration).Execute(false, true, false, session.Connection, null);
