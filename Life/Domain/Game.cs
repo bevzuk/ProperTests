@@ -6,7 +6,9 @@ using System.Text;
 #endregion
 
 namespace Domain {
+    [Serializable]
     public class Game {
+        [NonSerialized]
         public bool[,] Cells;
         public int Size { get; private set; }
         public string Name { get; private set; }

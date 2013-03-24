@@ -56,6 +56,7 @@
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
