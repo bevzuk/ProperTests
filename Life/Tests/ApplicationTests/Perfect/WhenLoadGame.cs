@@ -1,7 +1,7 @@
 ﻿#region Usings
 
 using Application;
-using Domain;
+using Common;
 using NUnit.Framework;
 
 #endregion
@@ -9,13 +9,20 @@ using NUnit.Framework;
 namespace ApplicationTests.Perfect {
     [TestFixture]
     public class WhenLoadGame : ApplicationTest {
+        private readonly GameService service = new GameService();
+
         [Test]
         public void SaveGameState() {
-            var game = new Game(3);
+            Given(a.Game(name: "SampleGame",
+                         field: @"...
+                                  .x.
+                                  ..."));
 
-            new GameService().Save(game, InMemoryDatabase);
+            var game = service.Load("SampleGame", InMemoryDatabase);
 
-            Assert.Fail("А как написать ассерт?");
+            Assert.That(game, IsEquivalent.To(@"...
+                                                .x.
+                                                ..."));
         }
     }
 }

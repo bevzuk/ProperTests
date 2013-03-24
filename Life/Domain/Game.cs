@@ -9,9 +9,11 @@ namespace Domain {
     public class Game {
         public bool[,] Cells;
         public int Size { get; private set; }
+        public string Name { get; private set; }
 
-        public Game(int size) {
+        public Game(int size, string name) {
             Size = size;
+            Name = name;
             Cells = new bool[size,size];
             for (var row = 0; row < Size; row++) {
                 for (var column = 0; column < Size; column++) {
@@ -19,6 +21,8 @@ namespace Domain {
                 }
             }
         }
+
+        public Game(int size) : this(size, Guid.NewGuid().ToString()) {}
 
         public Cell this[int row, int column] {
             get { return new Cell(Cells[row, column]); }

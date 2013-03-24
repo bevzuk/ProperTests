@@ -4,8 +4,8 @@ using NUnit.Framework.Constraints;
 
 #endregion
 
-namespace DomainTests {
-    public static class Equivalent {
+namespace Common {
+    public static class IsEquivalent {
         public static IResolveConstraint To(string gameRepresentation) {
             return new GameConstraint(gameRepresentation);
         }

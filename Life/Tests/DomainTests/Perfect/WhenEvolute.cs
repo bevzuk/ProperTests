@@ -1,5 +1,6 @@
 ﻿#region Usings
 
+using Common;
 using NUnit.Framework;
 
 #endregion
@@ -15,9 +16,9 @@ namespace DomainTests.Perfect {
 
             game.Step();
 
-            Assert.That(game, Equivalent.To(@"...
-                                              ...
-                                              ..."));
+            Assert.That(game, IsEquivalent.To(@"...
+                                                ...
+                                                ..."));
         }
 
         [Test]
@@ -28,9 +29,9 @@ namespace DomainTests.Perfect {
 
             game.Step();
 
-            Assert.That(game, Equivalent.To(@"...
-                                              .x.
-                                              ..."));
+            Assert.That(game, IsEquivalent.To(@"...
+                                                .x.
+                                                ..."));
         }
     }
 }

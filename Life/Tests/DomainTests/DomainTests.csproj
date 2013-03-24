@@ -55,8 +55,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Equivalent.cs" />
-    <Compile Include="GameConstraint.cs" />
     <Compile Include="NotPerfect\GameTests.cs" />
     <Compile Include="Perfect\DomainTest.cs" />
     <Compile Include="Perfect\Father.cs" />
@@ -70,6 +68,10 @@
     <ProjectReference Include="..\..\Domain\Domain.csproj">
       <Project>{8FB9D404-FE6A-4811-9550-6CD3726F4119}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{84009C37-3EAE-48FF-AC88-B503B2622693}</Project>
+      <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
