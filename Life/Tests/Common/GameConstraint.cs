@@ -15,7 +15,7 @@ namespace Common {
         public GameConstraint(string gameRepresentation) {
             expectedGameRepresentation =
                 string.Join(Environment.NewLine,
-                            gameRepresentation.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)
+                            gameRepresentation.Split(new[] {Environment.NewLine, "\n"}, StringSplitOptions.RemoveEmptyEntries)
                                               .Select(_ => _.Trim()));
         }
 

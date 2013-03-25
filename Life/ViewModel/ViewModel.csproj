@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\Domain.Game.datasource" />
     <None Include="Service References\LifeWebService\LifeWebService.wsdl" />
     <None Include="Service References\LifeWebService\LifeWebService.xsd">
       <SubType>Designer</SubType>
@@ -64,9 +65,6 @@
     </None>
     <None Include="Service References\LifeWebService\LifeWebService2.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LifeWebService\ViewModel.LifeWebService.Game.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +84,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{8fb9d404-fe6a-4811-9550-6cd3726f4119}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

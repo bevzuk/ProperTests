@@ -1,4 +1,5 @@
-﻿using ViewModel.LifeWebService;
+﻿using Domain;
+using ViewModel.LifeWebService;
 
 namespace ViewModel {
     public class MainViewModel {

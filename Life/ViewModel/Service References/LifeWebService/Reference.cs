@@ -9,75 +9,14 @@
 //------------------------------------------------------------------------------
 
 namespace ViewModel.LifeWebService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Game", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
-    [System.SerializableAttribute()]
-    public partial class Game : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string Namek__BackingFieldField;
-        
-        private int Sizek__BackingFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Name>k__BackingField", IsRequired=true)]
-        public string Namek__BackingField {
-            get {
-                return this.Namek__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Namek__BackingFieldField, value) != true)) {
-                    this.Namek__BackingFieldField = value;
-                    this.RaisePropertyChanged("Namek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Size>k__BackingField", IsRequired=true)]
-        public int Sizek__BackingField {
-            get {
-                return this.Sizek__BackingFieldField;
-            }
-            set {
-                if ((this.Sizek__BackingFieldField.Equals(value) != true)) {
-                    this.Sizek__BackingFieldField = value;
-                    this.RaisePropertyChanged("Sizek__BackingField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LifeWebService.ILifeWebService")]
     public interface ILifeWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILifeWebService/Load", ReplyAction="http://tempuri.org/ILifeWebService/LoadResponse")]
-        ViewModel.LifeWebService.Game Load(string name);
+        Domain.Game Load(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -107,7 +46,7 @@ namespace ViewModel.LifeWebService {
                 base(binding, remoteAddress) {
         }
         
-        public ViewModel.LifeWebService.Game Load(string name) {
+        public Domain.Game Load(string name) {
             return base.Channel.Load(name);
         }
     }

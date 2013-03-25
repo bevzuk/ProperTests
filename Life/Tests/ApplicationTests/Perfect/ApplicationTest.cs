@@ -19,7 +19,7 @@ namespace ApplicationTests.Perfect {
             get { return Context.Get<IDatabase>() as InMemoryDatabase; }
         }
 
-        internal void Given(params UseObjectFather[] objects) {
+        internal void Arrange(params UseObjectFather[] objects) {
             InMemoryDatabase.EnsureNextTimeDataIsPulledFromDatabase();
         }
 

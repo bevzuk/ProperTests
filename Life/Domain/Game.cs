@@ -1,16 +1,20 @@
 ﻿#region Usings
 
 using System;
+using System.Runtime.Serialization;
 using System.Text;
 
 #endregion
 
 namespace Domain {
-    [Serializable]
+    [DataContract]
     public class Game {
-        [NonSerialized]
         public bool[,] Cells;
+
+        [DataMember]
         public int Size { get; private set; }
+
+        [DataMember]
         public string Name { get; private set; }
 
         public Game(int size, string name) {
