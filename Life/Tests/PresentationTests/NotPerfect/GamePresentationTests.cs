@@ -1,5 +1,6 @@
 ﻿#region Usings
 
+using Domain;
 using Moq;
 using NUnit.Framework;
 using ViewModel;
@@ -23,7 +24,7 @@ namespace PresentationTests.NotPerfect {
         [Test]
         public void AssertFakeState() {
             var mock = new Mock<ILifeWebService>();
-            var expected = new Game();
+            var expected = new Game(1);
             const string gameName = "New game";
 
             mock.Setup(_ => _.Load(gameName)).Returns(expected);

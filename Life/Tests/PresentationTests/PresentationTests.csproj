@@ -69,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Domain.csproj">
+      <Project>{8FB9D404-FE6A-4811-9550-6CD3726F4119}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ViewModel\ViewModel.csproj">
       <Project>{3D2139C3-CBC1-458C-B6A5-4C5DE5CCF5CF}</Project>
       <Name>ViewModel</Name>
