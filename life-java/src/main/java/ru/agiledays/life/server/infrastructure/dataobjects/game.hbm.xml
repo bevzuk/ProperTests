@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.agiledays.life.server.infrastructure.dataobjects">
+  <class name="Game">
+    <id type="int" column="Id">
+      <generator class="native" />
+    </id>
+    <property name="Name" unique="true" />
+    <property name="Size" />
+    <set name="Cells" table="Cells">
+      <key column="GameId" foreign-key="FK_Cell_Game" />
+      <composite-element class="Cell" >
+        <property name="X" column="PositionX" />
+        <property name="Y" column="PositionY" />
+      </composite-element>
+    </set>
+  </class>
+</hibernate-mapping>
